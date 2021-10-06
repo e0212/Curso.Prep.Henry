@@ -1,4 +1,4 @@
-<p align='left'>
+   <p align='left'>
     <img  src='../logo.png' height='70px'>
 </p>
 <table width="100%" style='table-layout:fixed;'>
@@ -84,7 +84,7 @@ El "triple igual" (`===`) no debe confundirse con un solo signo igual (que indic
 
 ```javascript
 1 === 1;          // true
-1 === '1';        // false
+1 === '1';        // fal se
 'perro' === 'perro';  // true
 'perro' === 'Perro';  // false
 ```
@@ -123,7 +123,7 @@ if (false) {
     console.log('Este código NO correrá');
 }
 ```
-La declaración `else` siempre aparecerá al final de una cadena `if-else` o `if`, y actuará de manera predeterminada. Si ninguna de las expresiones devuelve `true`, el bloque de código `else` se ejecutará sin importar qué. Si alguna de las expresiones anteriores `if` o `else if` son `true`, el bloque de código de instrucción` else` no se ejecutará.
+La declaración `else` siempre aparecerá al final de una cadena `else-if` o `if`, y actuará de manera predeterminada. Si ninguna de las expresiones devuelve `true`, el bloque de código `else` se ejecutará sin importar qué. Si alguna de las expresiones anteriores `if` o `else if` son `true`, el bloque de código de instrucción` else` no se ejecutará.
 
 ```javascript
 if (false) {
@@ -153,7 +153,7 @@ if (10 === 9 && 10 > 9) {
 }
 ```
 
-### ||
+### || 
 
 El siguiente es el operador "Ó" ("OR"). Está escrito con dos barras verticales (`||`). Determinará si una de las expresiones es `true`. Devolverá `true` si una (o ambas) de las expresiones es` true`. Devolverá `false` si AMBAS expresiones son` false`:
 
@@ -184,7 +184,7 @@ if (!(1 === 1)) {
     console.log('1 es igual a 1, de modo que la expresión devuelve true. El operador ! devolverá lo contrario de eso, por lo que este código NO se ejecutará');
 }
 ```
-
+ 
 ### Notas sobre operadores lógicos
 
 Un par de cosas a tener en cuenta sobre los operadores lógicos.
@@ -204,7 +204,7 @@ for (let i = 0                 ; i < 10                 ; i++          ) {
 // | Declaramos una variable | Expresión condcicional | Incrementamos la variable |
     console.log(i);
 }
-```
+``` 
 
 En este ejemplo, vemos que inicialmente establecemos nuestra variable `i` en 0, el ciclo se ejecutará y cada vez que llegue al final, aumentará el contador en uno. El bucle `for` evaluará la expresión condicional. Si es `true`, se ejecutará nuevamente, si es `false` dejará de funcionar.
 
