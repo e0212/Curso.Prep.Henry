@@ -81,6 +81,7 @@ function tienenMismaLongitud(str1, str2) {
   return false
   
 }
+// revisar
 
 function menosQueNoventa(num) {
   // Devuelve "true" si el argumento de la función "num" es menor que noventa
@@ -134,13 +135,14 @@ function elevarAlCuadrado(num) {
   // ojo: No es raiz cuadrada!
   // Tu código:
   return num * num;
-  
+  //return Math.pow(num,2);
 }
 
 function elevarAlCubo(num) {
   // Devuelve el valor de "num" elevado al cubo
   // Tu código:
   return num * num * num;
+  //return Math.pow(num,3);
   
 }
 
@@ -170,6 +172,7 @@ function numeroRandom() {
   //Pista: investigá qué hace el método Math.random()
   var nuevonum = Math.random()
   return nuevonum
+  //revisar
   
 }
 
@@ -186,18 +189,30 @@ function esPositivo(numero) {
     return false;}
   }  
 
+  //if(numero>0){
+ //   return "Es positivo"
+  //}
+  //else if(numero<0){
+  //  return "Es negativo"
+  // }
+  //else{
+  // return false
+  // }
+
 function agregarSimboloExclamacion(str) {
   // Agrega un símbolo de exclamación al final de la string "str" y devuelve una nueva string
   // Ejemplo: "hello world" pasaría a ser "hello world!"
   // Tu código:
   return str + "!";
 }
+//var  newString =str +"!"
+// return  newString
 
 function combinarNombres(nombre, apellido) {
   // Devuelve "nombre" y "apellido" combinados en una string y separados por un espacio.
   // Ejemplo: "Soy", "Henry" -> "Soy Henry"
   // Tu código:
-  var combinado = nombre + " " + apellido;
+  var combinado = nombre + " " + apellido; 
   return combinado;
   
 }
@@ -242,7 +257,6 @@ function deEuroAdolar(euro){
   return euro * 1.20
   
 }
-
 
 function esVocal(letra){
   //Escribe una función que reciba una letra y, si es una vocal, muestre el mensaje “Es vocal”. 
