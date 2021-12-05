@@ -6,6 +6,14 @@ function crearGato(nombre, edad) {
   // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
   // Devuelve el objeto
   // Tu código:
+  var obj ={
+    nombre: nombre,
+    edad: edad,
+    meow: function() {
+      return "Meow!";
+  }
+};
+return obj;
 }
 
 
@@ -14,19 +22,25 @@ function agregarPropiedad(objeto, property) {
   // Devuelve el objeto
   // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del argumento llamado "property" (una cadena/string)
   // Tu código:
+  objeto[property]= null;
+  return objeto;
 }
+//se accede al parametro de property con brackets[].La propiedad no se llama property puede venir cualquier cosa, entonces los [] toma el parametro que viene por la funcion.
 
 function invocarMetodo(objeto, metodo) {
   // "metodo" es una cadena que contiene el nombre de un método (funcion) en el objeto
   // Invoca ese método
   // Nada necesita ser devuelto ("returned")
   // Tu código:
+  objeto[metodo] ();
 }
 
 function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
   // "objetoMisterioso" tiene una propiedad llamada "numeroMisterioso"
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
+  var result = objetoMisterioso.numeroMisterioso * 5;
+  return result;
 
 }
 
@@ -35,28 +49,44 @@ function eliminarPropiedad(objeto, unaPropiedad) {
   // tip: tenes que usar bracket notation
   // Devuelve el objeto
   // Tu código:
+  delete objeto [unaPropiedad];
+  return objeto;
 }
+// unaPropiedad viene pasada por parametro. no conocemos lo que tiene adentro.
 
 function nuevoUsuario(nombre, email, password) {
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
   // Devuelve el objeto
   // Tu código:
-
+  var objeto ={
+    nombre: nombre,
+    email: email,
+    password: password,
+  }
+  return objeto;
 }
 
 function tieneEmail(usuario) {
   // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
   // De lo contratio, devuelve "false"
   // Tu código:
+  if(usuario.email != null){ //if the user object has a value (o sea no es null)
+    return true;
+  }else{
+    return false;
+  }
 }
-
-
 
 function tienePropiedad(objeto, propiedad) {
   // Devuelve "true" si el objeto (parámetro "objeto") tiene una propiedad (key) cuyo nombre es igual al valor del argumento "propiedad"
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
+  if(objeto [propiedad]!=null){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 function verificarPassword(usuario, password) {
@@ -64,12 +94,21 @@ function verificarPassword(usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // // Tu código:
+  if(usuario ["password"]=== password){ // if passwords match
+    return true;
+  }else{
+    return false;
+  }
 }
+// la que esta en comillas es la password que esta dentro del objeto usuario y pregunta si coincide con password valor
 
 function actualizarPassword(usuario, nuevaPassword) {
-  // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevagPassword"
+  // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevaPassword"
   // Devuelve el objeto
   // Tu código:
+  usuario.password = nuevaPassword;
+  return usuario;
+// retornar el usuario objeto con la clave actualizada (nuevaPassword)
 }
 
 function agregarAmigo(usuario, nuevoAmigo) {
@@ -77,7 +116,10 @@ function agregarAmigo(usuario, nuevoAmigo) {
   // Agrega "nuevoAmigo" al final de ese array
   // Devuelve el objeto "usuario"
   // // Tu código:
+  usuario.amigos.push(nuevoAmigo);
+  return usuario;
 }
+// usamos dot notation porque sabemos que usuario tiene esa propiedad.
 
 function pasarUsuarioAPremium(usuarios) {
   // "usuarios" es un array de objetos "usuario"
@@ -85,7 +127,27 @@ function pasarUsuarioAPremium(usuarios) {
   // Define cada propiedad "esPremium" de cada objeto como "true"
   // Devuelve el array de usuarios
   // Tu código:
+  usuarios.map(function(element){
+    element.esPremium = true;
+  });
+  return usuarios;
 }
+// el objeto map ejecuta una accion por cada elemento del array
+/*
+var usuarios = [
+  usuario = {
+    esPremium: false,
+  },
+
+  usuario = {
+    esPremium: false,
+  },
+
+  usuario = {
+    esPremium: false,
+  },
+]
+*/
 
 function sumarLikesDeUsuario(usuario) {
   // "usuario" tiene una propiedad llamada "posts" que es un array
@@ -94,6 +156,22 @@ function sumarLikesDeUsuario(usuario) {
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
   // Tu código:
+  /*
+ usuario {
+  posts: [    es un array
+    post {
+      likes: 5,
+    }
+  
+    ]
+ 
+    }
+*/
+ var acumulador = 0;
+ usuario.posts.map(function (element){
+ acumulador += element.likes;
+ });
+ return acumulador;
 }
 
 function agregarMetodoCalculoDescuento(producto) {
@@ -106,7 +184,13 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
-
+  
+  producto.calcularPrecioDescuento = function (){
+    var precioConDescuento =
+    producto.precio - producto.precio * producto.porcentajeDeDescuento;
+    return precioConDescuento;
+  };
+  return producto;
 }
 
 // No modificar nada debajo de esta línea
