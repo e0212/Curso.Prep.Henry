@@ -11,6 +11,12 @@ function obtenerMayor(x, y) {
     return y;
   }   
 }
+//  if(x === y){
+ // return x
+// } else {
+ //  return Math.max(x,y)
+// }
+ 
   
 function mayoriaDeEdad(edad) {
   //Determinar si la persona según su edad puede ingresar a un evento.
@@ -88,10 +94,8 @@ function esDiezOCinco(numero) {
   // Devuelve "true" si "numero" es 10 o 5
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (numero === 10 || numero === 5 ){
-    return true;
-  }
-   return false;  
+  return (numero === 10 || numero === 5 )
+      
 }
 
 function estaEnRango(numero) {
@@ -117,6 +121,14 @@ function esEntero(numero) {
   }
    return false; 
 }
+// tambien se puede resolver asi:
+// if (numero - math.Floor(numero) === 0){  
+// return true;
+// } else {
+//  return false;
+//  }  
+//}
+// revisar
 
 function fizzBuzz(numero) {
   // Si "numero" es divisible entre 3, devuelve "fizz"
@@ -178,6 +190,11 @@ for (var i = 2; i < numero; i++) {
   return true;
 }  
 }
+// if(numero === 0|| numero ===1) return false ;
+//for(let i=2; i<numero ;i++){
+// if (numero % i === 0) return false ;
+// } 
+return true;
 
 function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
@@ -189,6 +206,7 @@ function esVerdadero(valor){
   return "Soy falso";
 }
 }
+// revisar
 
 function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
@@ -223,6 +241,7 @@ function doWhile(numero) {
   } while (contador <8);
   return numero;
 }
+//desarrollo util  javascript desde cero dowhile
 
 
 // No modificar nada debajo de esta línea
