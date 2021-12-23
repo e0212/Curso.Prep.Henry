@@ -75,15 +75,15 @@ function tienenMismaLongitud(str1, str2) {
   // Devuelve "true" si las dos strings tienen la misma longitud
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (str1.length === str2.length ) {
-    return true
+  if (str1.length === str2.length ) { // length en una string lo que hace es devolver la 
+    return true                       // cantidad de caracteres.
   }
   return false
   
 }
-// revisar
 
-function menosQueNoventa(num) {
+
+ function menosQueNoventa(num) {
   // Devuelve "true" si el argumento de la función "num" es menor que noventa
   // De lo contrario, devuelve "false"
   // Tu código:
@@ -91,7 +91,7 @@ function menosQueNoventa(num) {
     return true
   }
   return false 
-
+ 
   
 }
 
@@ -110,23 +110,24 @@ function mayorQueCincuenta(num) {
 function obtenerResto(x, y) {
   // Obten el resto de la división de "x" entre "y"
   // Tu código:
-  return x % y ;
+  return x % y ; // aca usa el operador modulo que obtiene el resto. nada mas
 }
 
 function esPar(num) {
   // Devuelve "true" si "num" es par
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (num % 2 === 0) {return true;}
-  else {return false;}
+  if (num % 2 === 0) {return true;} // aca lo que dice es si todo numero dividido por 2 
+  else {return false;}              // su resto es 0 se considera numero par.
 }
+
 
 function esImpar(num) {
   // Devuelve "true" si "num" es impar
   // De lo contrario, devuelve "false"
   // Tu código:
-  if ( num % 2 === 1 ) {return true;}
-  else {return false;}
+  if ( num % 2 === 1 ) {return true;} // aca lo que dice si todo numero dividido por 2
+  else {return false;}                // su resto es 1 se considera numero impar.
   
 }
 
@@ -149,30 +150,30 @@ function elevarAlCubo(num) {
 function elevar(num, exponent) {
   // Devuelve el valor de "num" elevado al exponente dado en "exponent"
   // Tu código:
-  return Math.pow(num, exponent);
-  
+  return Math.pow(num, exponent); // ya esta pasado por parametro. math.pow (2,2) = 4
+                                  
 }
 
 function redondearNumero(num) {
   // Redondea "num" al entero más próximo y devuélvelo
   // Tu código:
-  return Math.round(num);
-  
+  return Math.round(num); // lo mismo ya esta dado por parametro. Solo nos pide el metodo.
+                          
 }
-
+                          
 function redondearHaciaArriba(num) {
   // Redondea "num" hacia arriba (al próximo entero) y devuélvelo
   // Tu código:
-  return Math.ceil(num);
+  return Math.ceil(num); // math.ceil (6.01) = 7   al entero mas cerca hacia arriba
   
 }
 
 function numeroRandom() {
   //Generar un número al azar entre 0 y 1 y devolverlo
   //Pista: investigá qué hace el método Math.random()
-  var nuevonum = Math.random()
+  var nuevonum = Math.random() 
   return nuevonum
-  //revisar
+  
   
 }
 
@@ -221,7 +222,7 @@ function obtenerSaludo(nombre) {
   // Toma la string "nombre" y concatena otras string en la cadena para que tome la siguiente forma:
   // "Martin" -> "Hola Martin!"
   // Tu código:
-  return 'Hola ' + nombre + '!';
+  return 'Hola ' + nombre + '!'; //aca nombre ya viene por parametro,solo se agrega lo demas.
   
 }
 
