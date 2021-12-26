@@ -94,7 +94,7 @@ function esDiezOCinco(numero) {
   // Devuelve "true" si "numero" es 10 o 5
   // De lo contrario, devuelve "false"
   // Tu código:
-  return (numero === 10 || numero === 5 )
+  return (numero === 10 || numero === 5 ) // asi ya corre.10 or 5
       
 }
 
@@ -102,7 +102,7 @@ function estaEnRango(numero) {
   // Devuelve "true" si "numero" es menor que 50 y mayor que 20
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (numero <50 && numero >20 ){
+  if (numero <50 && numero >20 ){ // aca usa menor que 50 y -&&- mayor que 20
     return true;
   }
    return false; 
@@ -116,19 +116,16 @@ function esEntero(numero) {
   // De lo contrario, devuelve "false"
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
-  if (Number.isInteger(numero)){
+  if (Number.isInteger(numero)){ //El método Number.isInteger() determina si el valor pasado es de tipo entero.
     return true;
   }
    return false; 
 }
 // tambien se puede resolver asi:
-// if (numero - math.Floor(numero) === 0){  
-// return true;
-// } else {
-//  return false;
-//  }  
-//}
-// revisar
+// if (numero === Math.floor(numero)) return true; 
+// else return false;
+// }
+
 
 function fizzBuzz(numero) {
   // Si "numero" es divisible entre 3, devuelve "fizz"
@@ -178,7 +175,7 @@ function esPrimo(numero) {
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
   // Tu código:
-  if(numero < 2){
+  if(numero < 2){ // comienza con este para descartar el 0 y el 1
     return false;
 } else if (numero === 2){
     return true;
@@ -194,7 +191,7 @@ for (var i = 2; i < numero; i++) {
 //for(let i=2; i<numero ;i++){
 // if (numero % i === 0) return false ;
 // } 
-return true;
+// return true;
 
 function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
@@ -211,7 +208,8 @@ function esVerdadero(valor){
 function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
-  //Escribe tu código aquí   
+  //Escribe tu código aquí  
+  // [0 , 6, 12, 18, 24, 30, 36, 42, 48, 54, 60] 
   var arrTablaDel6 = []
 
   for(var i =0;i <=10; i++){
@@ -232,13 +230,13 @@ function tieneTresDigitos(numero){
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
-  //Usar el bucle do ... while.
+  //Usar el bucle do ... while. 
   // Tu código:
-  var contador = 0
-  do {
-    numero += 5;
-    contador ++
-  } while (contador <8);
+  var contador = 0        // este seria el i , que empieza en 0 hasta 8
+  do {                   // que haga esto. aca comienza
+    numero += 5;        // numero = numero + 5;
+    contador ++        // para que no caiga bucle infinito
+  } while (contador <8);   // mientras el limite es 8
   return numero;
 }
 //desarrollo util  javascript desde cero dowhile
