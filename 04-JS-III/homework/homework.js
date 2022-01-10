@@ -26,12 +26,12 @@ function obtenerLargoDelArray(array) {
 
 function incrementarPorUno(array) {
   // "array" debe ser una matriz de enteros (int/integers)
-  // Aumenta cada entero por 1
+  // Aumenta cada entero por 1 (aca se usa la bolsa, porque necesita meter el nuevoArray)
   // y devuelve el array
   // Tu código:
-  var nuevoArray =[];
-  for (var i = 0; i < array.length; i++) {
-    nuevoArray[i] = array[i] +1;
+  var nuevoArray =[]; // la bolsa
+  for (var i = 0; i < array.length; i++) { // itinera dentro de todo lo que sea array.
+    nuevoArray[i] = array[i] +1; // Aumenta .Que comience a buscar en la posicion 0 y se vaya incrementando en 1.
   }
   return nuevoArray;
 }
@@ -41,7 +41,7 @@ function agregarItemAlFinalDelArray(array, elemento) {
   // Añade el "elemento" al final del array
   // y devuelve el array
   // Tu código:
-  array[array.length] = elemento;
+  array[array.length] = elemento; // con = agrega porque es asignacion, un nuevo elemento llamado "elemento" al final del array.
   return array;
 }
  // se puede resolver con array.push (elemento);
@@ -71,7 +71,7 @@ function arrayContiene(array, elemento) {
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
   for(var i=0; i<array.length; i++){
-    if(array[i]===elemento){
+    if(array[i]===elemento){ // le dice basicamente itinera dentro de array hasta encontrar elemento.
       return true;
       }
      }
@@ -82,11 +82,12 @@ function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
-  var acum =0;
-  for(var i=0; i<numeros.length; i++){
-    acum = acum + numeros[i];
+
+  var suma =0;
+  for(var i=0; i<numeros.length; i++){ // numeros.length toma de arriba donde declara la funcion. (ver otros ejercicios que toma array.length)
+    suma = suma + numeros[i];
   }
-  return acum;
+  return suma;
 }
 
 
@@ -102,7 +103,7 @@ function promedioResultadosTest(resultadosTest) {
 // var totalDeElementos = resultadosTest.length;
 // var suma = 0;
 // for (var i = 0; i<resultadosTest.length; i++){
-//   suma = suma + resultadosTest[i];
+//   suma = suma + resultadosTest[i];    (sumalos y metelos adentro)
 // }
 // var promedio = suma / totalDeElementos;
 // return promedio;
@@ -120,7 +121,7 @@ return prom;
 
 function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
-  // Devuelve el número más grande
+  // Devuelve el número más grande (var mayor)
   // Tu código:
   var mayor = numeros[0];
   for(var i=0; i<numeros.length;i++){
@@ -134,9 +135,9 @@ function numeroMasGrande(numeros) {
 
 
 function multiplicarArgumentos() {
-  // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
-  // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
-  // Escribe tu código aquí:
+// Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
+// Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
+// Escribe tu código aquí:
   if (arguments.length===0){ 
     return 0;
   }
@@ -178,19 +179,28 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
+  // 95
+  // var str = "95"  "9"
   var cadena = n.toString()
-  if(cadena[0]==="9"){ 
+
+  if(cadena[0]==="9"){ // convierte el caracter 9 y lo trae a string en posicion [0]
     return true;
     }
     return false;
 }
+// empiezaConNueve(95)
+// empiezaConNueve (145) no - saltea true y devuelve false
 
 function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
-  //Escribe tu código aquí  
+  //Escribe tu código aquí 
+  // [2,2,2,2,2,2,87] 2 en la posicion 0 es distinto al que le sigue? no, entonces sigue iterando. En estos casos que vemos lo que esta por delante, cortamos antes de 87 para no salirnos del arreglo. Porque despues de 87 no hay nada.
+  // === exactamente igual
+  // !== distinto
+
   for(var i=0; i<arreglo.length-1;i++){ 
-    if(arreglo[i]!==arreglo[i+1]){ 
+    if(arreglo[i]!==arreglo[i+1]){ //comparamos el elemento en el que estamos parados [i] con el elemento que le sigue a ese.  si la primera posicion es distina a la siguiente
       return false;
     } 
   } 
@@ -219,18 +229,22 @@ function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
-  var nuevoArreglo = [];
+
+  // [1,4,500,250,100]
+
+
+  var mayores100 = [];  // [500,250] // declaramos un array vacio para saber si lo podemos llenar o no (o sea si encuentra numeros mayores a 100). en este caso encuentra 500, 250.
   for(var i = 0; i < array.length; i++){ 
     if(array[i] > 100) { 
-      nuevoArreglo.push (array[i]);
+      mayores100.push (array[i]); // array en la posicion i [i] es 500 lo pushea al array vacio que declaramos. Lo mismo con 250.
       }
      }
-     return nuevoArreglo;
+     return mayores100;
     }
 
 function breakStatement(numero) {
   //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
-  //Guardar cada nuevo valor en un array. 
+  //Guardar cada nuevo valor en un array.(cuando dice esto nos da la pauta que usemos el array vacio - bolsa para iniciar). 
   //Devolver el array
   //Si en algún momento el valor de la suma y la cantidad de iteraciones coinciden, debe interrumpirse la ejecución y 
   //devolver: "Se interrumpió la ejecución"
@@ -242,7 +256,8 @@ function breakStatement(numero) {
     numero = numero + 2;
     arreglo.push(numero)
     vueltas = vueltas + 1;
-    if(vueltas === numero){ 
+
+    if(vueltas === numero){ // frena porque valor de suma y el numero de iteraciones coinciden ( === )
       break;
       }
     }
@@ -251,6 +266,7 @@ function breakStatement(numero) {
   }
 return arreglo;
 }
+// ejm: recibe el 50 [52,54,56,58,60,62,64,66,68,70]
 
 
 function continueStatement(numero) {
@@ -262,6 +278,7 @@ function continueStatement(numero) {
   // Tu código:
   var arreglo = [];
   for(var i = 0; i < 10; i++){ 
+    
     if( i === 5){ 
       continue;
        }
