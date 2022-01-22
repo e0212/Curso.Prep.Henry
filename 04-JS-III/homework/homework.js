@@ -71,7 +71,7 @@ function arrayContiene(array, elemento) {
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
   for(var i=0; i<array.length; i++){
-    if(array[i]===elemento){ // le dice basicamente itinera dentro de array hasta encontrar elemento.
+    if(array[i]===elemento){ // array en la posicion i === elemento .le dice basicamente itinera dentro de array hasta encontrar elemento.
       return true;
       }
      }
@@ -123,11 +123,13 @@ function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande (var mayor)
   // Tu código:
-  var mayor = numeros[0];
+  // la busqueda del mayor
+
+  var mayor = numeros[0]; // tomo numero subcero el primer elemento como el mayor, y comienzo a iterar.
   for(var i=0; i<numeros.length;i++){
-    if(numeros[i]>mayor){
-      mayor=numeros[i];
-    }
+  if(numeros[i]>mayor){ // empiezo a preguntar, si lo que tiene numeros sub i es > a mayor, luego voy a decir...
+    mayor = numeros[i];  //  que a mayor le asigne lo que encontro como mayor ahora que es numeros sub i                   
+    }                     // cuando salga del for lo que va tener es el mayor encontrado.
   }
   return mayor;
 }
@@ -138,13 +140,14 @@ function multiplicarArgumentos() {
 // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
 // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
 // Escribe tu código aquí:
+
   if (arguments.length===0){ 
     return 0;
   }
   if (arguments.length===1){ 
   return 1;
   }
-  var m = 1;
+  var m = 1; // multiplicacion =1 => aca arranca
   for(var i=0; i<arguments.length;i++){ 
     m = m*arguments[i];
   }
@@ -154,9 +157,11 @@ function multiplicarArgumentos() {
 function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
+  // pide esto: [9,9,18,22] = 1 => solo el 22 es mayor a 18
+  
   var cant=0;
   for(var i=0;i<arreglo.length;i++){ 
-    if(arreglo[i]>18){ 
+    if(arreglo[i]>18){  // se usa para preguntar la condicion que sea mayor a 18, si es mayor a 18 contalo sino no.
       cant++;
        }
       }
@@ -212,31 +217,32 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
-  var nuevoArreglo = [];
+  var nuevoArreglo =[]
   for(var i = 0; i<array.length; i++){ 
-    if(array[i] ==="Enero" || array[i] ==="Marzo" || array[i] ==="Noviembre"){ 
+    if(array[i] ==="Enero"  || array[i] ==="Marzo"  || array[i] ==="Noviembre"){
       nuevoArreglo.push(array[i]);
-         }
-        }
-        if(nuevoArreglo.length ===3){ 
+  }
+  }
+  if(nuevoArreglo.length ===3){ 
           return nuevoArreglo;
         }
         return "No se encontraron los meses pedidos";
-       }
+      }
+       
+
 
 
 function mayorACien(array) {
+
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
+ // [100, 4, 56, 78, 200, 120, 7, 160, 148, 22]  
 
-  // [1,4,500,250,100]
-
-
-  var mayores100 = [];  // [500,250] // declaramos un array vacio para saber si lo podemos llenar o no (o sea si encuentra numeros mayores a 100). en este caso encuentra 500, 250.
+  var mayores100 = [];  // [200, 120, 160, 148] declaramos un array vacio para saber si lo podemos llenar o no (o sea si encuentra numeros mayores a 100). 
   for(var i = 0; i < array.length; i++){ 
     if(array[i] > 100) { 
-      mayores100.push (array[i]); // array en la posicion i [i] es 500 lo pushea al array vacio que declaramos. Lo mismo con 250.
+      mayores100.push (array[i]); // array en la posicion i [i] va buscando hasta encontrar los mayores a 100 y los mete en la bolsa.
       }
      }
      return mayores100;
@@ -250,6 +256,9 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
+  // 52 = 0, no
+  // 54 = 1, no. aca no se corta porque nunca coincide la iteracion con el numero.
+  // -4 si, seria cuando llega a 2. coincide con la iteracion.
   var arreglo =[];
   var vueltas = 0;
   for(var i = 0; i < 10; i++) {
@@ -267,7 +276,8 @@ function breakStatement(numero) {
 return arreglo;
 }
 // ejm: recibe el 50 [52,54,56,58,60,62,64,66,68,70]
-
+// ejm: recibe el -4 [-2, 0, 2, 4, 6, 8, 10, 12, 14] aca se corta porque 2 === 2
+//                    0, 1, 2
 
 function continueStatement(numero) {
   //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
@@ -276,6 +286,10 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+  // nunca alcanza el valor 5. 
+  // expect(continueStatement(50)).toEqual([52, 54, 56, 58, 60, 62, 64, 66, 68]); 9 veces
+  // expect(continueStatement(-4)).toEqual([-2, 0, 2, 4, 6, 8, 10, 12, 14]); 9 veces
+  
   var arreglo = [];
   for(var i = 0; i < 10; i++){ 
     
