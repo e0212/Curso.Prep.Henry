@@ -22,7 +22,7 @@ function agregarPropiedad(objeto, property) {
   // Devuelve el objeto
   // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del argumento llamado "property" (una cadena/string)
   // Tu código:
-  objeto[property]= null;
+  objeto[property]= null; // objeto - clave=property - valor=null
   return objeto;
 }
 //se accede al parametro de property con brackets[].La propiedad no se llama property puede venir cualquier cosa, entonces los [] toma el parametro que viene por la funcion.
@@ -53,6 +53,7 @@ function eliminarPropiedad(objeto, unaPropiedad) {
   return objeto;
 }
 // unaPropiedad viene pasada por parametro. no conocemos lo que tiene adentro.
+// unaPropiedad seria la clave o tambien llamada propiedad.
 
 function nuevoUsuario(nombre, email, password) {
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
@@ -176,7 +177,8 @@ function sumarLikesDeUsuario(usuario) {
 
 function agregarMetodoCalculoDescuento(producto) {
   // Agregar un método (función) al objeto "producto" llamado "calcularPrecioDescuento"
-  // Este método debe multiplicar el "precio" del "producto" ("producto.precio" o "producto[precio]") y "porcentajeDeDescuento" para obtener el descuento
+  // Este método debe multiplicar el "precio" del "producto" ("producto.precio" o "producto[precio]") 
+  // y "porcentajeDeDescuento" para obtener el descuento
   // El método resta el descuento del precio y devuelve el precio con descuento
   // Devuelve el objeto "producto" al final de la función
   // Ejemplo:
