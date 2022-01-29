@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"name": "02-JS-I",
+			"path": "..\\..\\02-JS-I"
+		},
+		{
+			"name": "03-JS-II",
+			"path": ".."
+		},
+		{
+			"name": "04-JS-III",
+			"path": "..\\..\\04-JS-III"
+		},
+		{
+			"path": "..\\..\\05-JS-IV"
+		},
+		{
+			"path": "..\\..\\06-JS-V"
+		},
+		{
+			"path": "..\\..\\07-JS-VI"
+		},
+		{
+			"path": "..\\..\\..\\consola"
+		}
+	],
+	"settings": {}
+}
