@@ -6,14 +6,14 @@ function crearGato(nombre, edad) {
   // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
   // Devuelve el objeto
   // Tu código:
-  var obj ={
+  var cat ={
     nombre: nombre,
     edad: edad,
     meow: function() {
       return "Meow!";
   }
 };
-return obj;
+return cat;
 }
 
 
@@ -26,7 +26,7 @@ function agregarPropiedad(objeto, property) {
   return objeto;
 }
 //se accede al parametro de property con brackets[].La propiedad no se llama property puede venir cualquier cosa, entonces los [] toma el parametro que viene por la funcion.
-
+// property es una variable por eso se usa bracket.
 function invocarMetodo(objeto, metodo) {
   // "metodo" es una cadena que contiene el nombre de un método (funcion) en el objeto
   // Invoca ese método
@@ -42,6 +42,8 @@ function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
   var result = objetoMisterioso.numeroMisterioso * 5;
   return result;
 
+  // return objetoMisterioso.numeroMisterioso * 5;
+
 }
 
 function eliminarPropiedad(objeto, unaPropiedad) {
@@ -54,6 +56,7 @@ function eliminarPropiedad(objeto, unaPropiedad) {
 }
 // unaPropiedad viene pasada por parametro. no conocemos lo que tiene adentro.
 // unaPropiedad seria la clave o tambien llamada propiedad.
+// unaPropiedad es una variable.  
 
 function nuevoUsuario(nombre, email, password) {
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
@@ -128,11 +131,18 @@ function pasarUsuarioAPremium(usuarios) {
   // Define cada propiedad "esPremium" de cada objeto como "true"
   // Devuelve el array de usuarios
   // Tu código:
-  usuarios.map(function(element){
-    element.esPremium = true;
-  });
-  return usuarios;
+  
+  for(var i= 0; i<usuarios.length; i++){
+    usuarios [i].esPremium = true;
+  }
+ return usuarios;
 }
+
+  //usuarios.map(function(element){
+  //  element.esPremium = true;
+  //});
+  //return usuarios;
+
 // el objeto map ejecuta una accion por cada elemento del array
 /*
 var usuarios = [
@@ -158,24 +168,45 @@ function sumarLikesDeUsuario(usuario) {
   // Devuelve la suma
   // Tu código:
   /*
- usuario {
-  posts: [    es un array
-    post {
-      likes: 5,
+ usuario {   ===>   es un objeto
+
+   posts: [  ===>   es un array que dentro contiene mas objetos
+   post {
+     likes: 10,
     }
-  
+
+  post {
+      likes: 100,
+    }
+
+    post {
+      likes: 35,
+    }
+
+    post {
+      likes: 42,
+    }
+
+    post {
+      likes: 99,
+    }
+
     ]
  
     }
 */
- var acumulador = 0;
- usuario.posts.map(function (element){
- acumulador += element.likes;
- });
- return acumulador;
+ var contador = 0; // aca se guarda todo lo que va a contar, o sea la suma de likes
+ for(var i = 0; i<usuario.posts.length; i++ ){
+   contador = contador + usuario.posts[i].likes;
+  }
+  return contador;
 }
 
-function agregarMetodoCalculoDescuento(producto) {
+ //usuario.posts.map(function (element){
+ //acumulador += element.likes;
+ //});
+ 
+ function agregarMetodoCalculoDescuento(producto) {
   // Agregar un método (función) al objeto "producto" llamado "calcularPrecioDescuento"
   // Este método debe multiplicar el "precio" del "producto" ("producto.precio" o "producto[precio]") 
   // y "porcentajeDeDescuento" para obtener el descuento
