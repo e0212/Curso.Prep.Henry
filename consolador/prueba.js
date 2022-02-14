@@ -1,22 +1,22 @@
-function math (a,b, callback){
-
-    var resultado = a + b;
-
-    callback (resultado)
-}
-
-function suma (resultado){
-
-    if (resultado >10 ) {
-
-        alert ("El resultado de la suma es muy grande!" + resultado);
-
-    }else{
-
-        alert ("El resultado de la suma es muy pequeño!" + resultado);
+function sumaTodosImpares(array) {
+    var impares = [];
+    var sumaTodosImpares = 0;
+  
+    for (let i = 0; i < array.length; i++) {
+          if(array[i] % 2 === 1){
+            impares.push(array[i]);
+            sumaTodosImpares = sumaTodosImpares + array[i];
+             
+          }
+          
     }
-}
-
-math (5, 6, suma)
+    console.log(array);
+     return sumaTodosImpares ; 
+     
+     
+  }
+  
+  
+  
 
   
